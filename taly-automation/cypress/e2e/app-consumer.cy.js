@@ -60,7 +60,7 @@ describe('User Registration', () => {
     });
 
     it('Go to TALY site', () => {
-      cy.visit('https://dev.devtalysub.com/');
+      cy.visit('/');
     });
 
     it('Click Signup or Login', () => {
@@ -142,7 +142,7 @@ describe('User Registration', () => {
     });
 
     it('Visit TALY page', () => {
-      cy.visit('https://dev.devtalysub.com/')
+      cy.visit('/')
     })
 
     it('Click on "Partner with us" button', () => {
