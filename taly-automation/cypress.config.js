@@ -8,7 +8,5 @@ export default defineConfig({
     },
     baseUrl: 'https://www.wearetaly.com/',
     testIsolation: false,
-    viewportWidth: 1920,
-    viewportHeight: 1080
   },
 });
