@@ -5,9 +5,10 @@ export default defineConfig({
   "experimentalModuleVariables": true,
   e2e: {
     setupNodeEvents(on, config) {
-
     },
-    baseUrl: 'https://erickwendel.github.io/vanilla-js-web-app-example',
+    baseUrl: 'https://www.wearetaly.com/',
     testIsolation: false,
+    viewportWidth: 1920,
+    viewportHeight: 1080
   },
 });
