@@ -9,7 +9,7 @@ describe('User Registration', () => {
 
   const extractConfirmationCode = (text) => {
     const match = text.match(/Your confirmation code is (\d+)/);
-    return match ? match[1] : 'Código não encontrado';
+    return match ? match[1] : 'Confirmation code not found';
   };
 
   const getToken = async (hash) => {
