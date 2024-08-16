@@ -6,7 +6,7 @@ export default defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
     },
-    baseUrl: 'https://dev.devtalysub.com/',
+    baseUrl: 'https://staging.devtalysub.com/',
     testIsolation: false,
     viewportWidth: 1920,
     viewportHeight: 1080

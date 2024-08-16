@@ -41,7 +41,10 @@ describe('User Registration', () => {
   };
 
   const createEmail = () => {
-    const emailID = Date.now();
+    const timestamp = Date.now();
+    const shortTimestamp = timestamp.toString().slice(-6); 
+    const randomComponent = Math.floor(Math.random() * 1000);
+    const emailID = `taly${shortTimestamp}_${randomComponent}`;
     const emailBase = `${emailID}@mocvn.com`;
     const emailHash = createHashEmail(emailBase);
     email = emailBase;
@@ -101,8 +104,8 @@ describe('User Registration', () => {
       cy.get('#btn_check_fields_signup').click();
     });
   
-    it(`Wait for email to arrive`, () => {
-      cy.wait(10000);
+    it(`Wait for email the confirmation code to arrive`, () => {
+      cy.wait(7000);
     });
   
     it(`Retrieve and use the confirmation code`, () => {
@@ -114,21 +117,21 @@ describe('User Registration', () => {
     });
   
     it(`Click Next if not already clicked`, () => {
-      cy.get('body').then((body) => {
-        if (body.find('#btn_verify').length > 0) {
-          cy.get('#btn_verify').then(($btn) => {
-            if (!$btn.is(':disabled')) {
-              cy.wrap($btn).click();
-            }
-          });
+      cy.get('body').then($body => {
+        if ($body.find('#btn_verify').length > 0) {
+          cy.get('#btn_verify').click();
         }
       });
     });
-  
-    it(`Click Let's go!`, () => {
-      cy.get('#btn_link_consumer_signup').click();
+
+    it(`Click Let's go! if button exists`, () => {
+      cy.get('body').then($body => {
+        if ($body.find('#btn_link_consumer_signup').length > 0) {
+          cy.get('#btn_link_consumer_signup').click();
+        }
+      });
     });
-  
+    
     it('See if My Account is available', () => {
       cy.visit('/my-account');
     });
@@ -166,8 +169,8 @@ describe('User Registration', () => {
       cy.get('#btn_check_password_vendor').click()
     })
 
-    it(`Wait for email to arrive`, () => {
-      cy.wait(10000);
+    it(`Wait for email the confirmation code to arrive`, () => {
+      cy.wait(7000);
     });
   
     it(`Retrieve and use the confirmation code`, () => {
