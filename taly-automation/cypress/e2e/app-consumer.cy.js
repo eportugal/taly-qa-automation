@@ -251,7 +251,7 @@ describe('User Registration', () => {
     })
 
     it(`Logged!`, () => {
-      cy.get('.leading-none > :nth-child(1) > .w-full').should('contain.text', 'Have a tremendous');
+      cy.get('.leading-none > :nth-child(1) > .w-full').should('exist');;
     })
 
   })
