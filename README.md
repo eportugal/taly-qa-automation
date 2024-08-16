@@ -7,7 +7,7 @@ Project Structure
 taly-automation-cy/
 ├── cypress/
 │   ├── fixtures/          # Static data used in the tests
-│   ├── integration/       # Test files
+│   ├── e2e/               # Test files
 │   ├── support/           # Support files, such as custom commands
 ├── cypress.json           # Cypress configuration file
 ├── package.json           # Project metadata and dependencies
