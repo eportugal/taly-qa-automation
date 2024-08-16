@@ -102,7 +102,7 @@ describe('User Registration', () => {
     });
   
     it(`Wait for email to arrive`, () => {
-      cy.wait(5000);
+      cy.wait(10000);
     });
   
     it(`Retrieve and use the confirmation code`, () => {
@@ -167,7 +167,7 @@ describe('User Registration', () => {
     })
 
     it(`Wait for email to arrive`, () => {
-      cy.wait(5000);
+      cy.wait(10000);
     });
   
     it(`Retrieve and use the confirmation code`, () => {
