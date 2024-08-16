@@ -5,9 +5,9 @@ on:
     branches:
       - main
     paths:
-      - 'taly-automation/**.js'
-      - 'taly-automation/**.json'
-      - 'taly-automation/**.yml'
+      - 'src/**.tsx'
+      - 'src/**.json'
+      - 'src/**.yml' 
 
 jobs:
   taly-automation-tests:
