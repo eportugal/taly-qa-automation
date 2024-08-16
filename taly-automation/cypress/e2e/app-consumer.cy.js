@@ -56,12 +56,7 @@ describe('User Registration', () => {
     before(() => {
       createEmail();
     });
-    
-    after(() => {
-      cy.clearCookies();
-      cy.clearAllLocalStorage();
-    });
-
+  
     it('Go to TALY site', () => {
       cy.visit('/');
     });
@@ -226,7 +221,7 @@ describe('User Registration', () => {
     })
 
     it(`Type ecommerce platform`, () => {
-      cy.get('#platform_vendor').type('Shopicom')
+      cy.get('#platform_vendor').type('Shopify')
     })
 
     it(`Type Website`, () => {
@@ -258,4 +253,10 @@ describe('User Registration', () => {
     })
 
   })
+
+  after(() => {
+    cy.clearCookies();
+    cy.clearAllLocalStorage();
+  });
+  
 })
