@@ -55,6 +55,8 @@ describe('User Registration', () => {
   
     before(() => {
       createEmail();
+      cy.clearCookies();
+      cy.clearAllLocalStorage();
     });
   
     it('Go to TALY site', () => {
